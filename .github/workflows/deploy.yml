@@ -19,6 +19,7 @@ jobs:
             set -e
             APP_DIR="/home/debian/ns-tech-landing"
 
+            # Clone or pull latest code
             if [ ! -d "$APP_DIR" ]; then
               git clone https://github.com/Nurali017/ns-tech-landing.git "$APP_DIR"
             fi
@@ -27,17 +28,21 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
 
-            npm ci --production=false
-            npm run build
+            # Build Docker image
+            docker build -t ns-tech-landing:latest .
 
-            cp -r public .next/standalone/public
-            cp -r .next/static .next/standalone/.next/static
+            # Stop and remove old container if exists
+            docker stop ns-tech-landing 2>/dev/null || true
+            docker rm ns-tech-landing 2>/dev/null || true
 
-            pm2 describe ns-tech-landing > /dev/null 2>&1 && \
-              pm2 restart ns-tech-landing || \
-              pm2 start .next/standalone/server.js \
-                --name ns-tech-landing \
-                --env PORT=3001 \
-                -- -H 0.0.0.0
+            # Run new container on kaisar network
+            docker run -d \
+              --name ns-tech-landing \
+              --network kaisar_kaisar-network \
+              --restart unless-stopped \
+              ns-tech-landing:latest
 
-            pm2 save
+            # Reload nginx to pick up any config changes
+            docker exec kaisar-nginx nginx -s reload 2>/dev/null || true
+
+            echo "Deploy complete!"
