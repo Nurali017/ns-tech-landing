@@ -30,6 +30,12 @@ export function Footer() {
                                     +7 747 645 4516
                                 </a>
                             </div>
+                            <div className="flex items-center gap-3">
+                                <Phone className="w-5 h-5 text-primary" />
+                                <a href="tel:+77028616567" className="hover:text-white transition-colors">
+                                    +7 702 861 6567
+                                </a>
+                            </div>
                         </div>
 
                         <div className="flex gap-4 mt-6">

@@ -20,7 +20,7 @@ export function About() {
                     <h2 className="text-3xl md:text-5xl font-bold mb-8 text-primary">
                         {t.about.title}
                     </h2>
-                    <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
+                    <p className="text-base sm:text-xl md:text-2xl text-gray-700 leading-relaxed">
                         {t.about.description}
                     </p>
                 </motion.div>

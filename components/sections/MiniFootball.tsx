@@ -77,7 +77,7 @@ export function MiniFootball() {
                         viewport={{ once: true }}
                         className="relative flex items-center justify-center"
                     >
-                        <div className="relative z-20 w-[280px] h-[560px] bg-black rounded-[44px] border-[6px] border-gray-800 shadow-2xl overflow-hidden">
+                        <div className="relative z-20 w-[220px] h-[440px] sm:w-[280px] sm:h-[560px] bg-black rounded-[36px] sm:rounded-[44px] border-[5px] sm:border-[6px] border-gray-800 shadow-2xl overflow-hidden">
                             <img
                                 src={t.minifootball.screenshots.matchDetail.src}
                                 alt={t.minifootball.screenshots.matchDetail.alt}

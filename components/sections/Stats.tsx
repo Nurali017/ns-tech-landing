@@ -26,10 +26,10 @@ export function Stats() {
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             viewport={{ once: true }}
                         >
-                            <p className="text-4xl md:text-6xl font-bold mb-2 text-primary">
+                            <p className="text-3xl sm:text-4xl md:text-6xl font-bold mb-2 text-primary">
                                 {stat.value}
                             </p>
-                            <p className="text-lg text-gray-400 uppercase tracking-widest">
+                            <p className="text-sm sm:text-lg text-gray-400 uppercase tracking-widest">
                                 {stat.label}
                             </p>
                         </motion.div>
