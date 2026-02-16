@@ -1,0 +1,26 @@
+import React from "react";
+import { cn } from "@/lib/utils";
+
+interface SectionProps extends React.HTMLAttributes<HTMLElement> {
+    container?: boolean;
+}
+
+export function Section({
+    className,
+    children,
+    container = true,
+    ...props
+}: SectionProps) {
+    return (
+        <section
+            className={cn("py-16 md:py-24 overflow-hidden", className)}
+            {...props}
+        >
+            {container ? (
+                <div className="container mx-auto px-4 md:px-6">{children}</div>
+            ) : (
+                children
+            )}
+        </section>
+    );
+}
