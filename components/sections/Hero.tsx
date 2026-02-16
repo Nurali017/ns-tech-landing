@@ -50,10 +50,6 @@ export function Hero() {
                                     Google Play
                                 </Button>
                             </a>
-                            <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-full text-lg h-14 px-8 backdrop-blur-sm">
-                                {t.hero.ctaSecondary}
-                                <ArrowRight className="w-5 h-5 ml-2" />
-                            </Button>
                         </div>
                     </motion.div>
 

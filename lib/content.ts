@@ -3,7 +3,7 @@ export type Locale = 'en' | 'kz';
 export const content = {
     en: {
         hero: {
-            badge: "New level of fitness",
+            badge: "New level of digital sports",
             title: "We build digital sports infrastructure",
             subtitle: "From mobile apps to full-scale platforms — NS TECH creates technology that moves sport forward in Kazakhstan and Central Asia",
             ctaPrimary: "Download App",
@@ -147,7 +147,7 @@ export const content = {
     },
     kz: {
         hero: {
-            badge: "Фитнестің жаңа деңгейі",
+            badge: "Цифрлық спорттың жаңа деңгейі",
             title: "Біз цифрлық спорт инфрақұрылымын құрамыз",
             subtitle: "Мобильді қосымшалардан толыққанды платформаларға дейін — NS TECH Қазақстан мен Орталық Азияда спортты алға жылжытатын технологиялар жасайды",
             ctaPrimary: "Қосымшаны жүктеу",
